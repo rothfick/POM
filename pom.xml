@@ -16,7 +16,7 @@
         <testng.version>7.8.0</testng.version>
         <webdrivermanager.version>5.5.3</webdrivermanager.version>
         <allure.version>2.24.0</allure.version>
-        <aspectj.version>1.9.20.1</aspectj.version>
+        <aspectj.version>1.9.19</aspectj.version>  <!-- Zmieniłem wersję na 1.9.19, która jest bardziej stabilna z Allure -->
         <slf4j.version>2.0.9</slf4j.version>
     </properties>
 
@@ -49,6 +49,20 @@
             <version>${allure.version}</version>
         </dependency>
 
+        <!-- AspectJ runtime -->
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjrt</artifactId>
+            <version>${aspectj.version}</version>
+        </dependency>
+
+        <!-- AspectJ weaver - dodane jako zależność -->
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjweaver</artifactId>
+            <version>${aspectj.version}</version>
+        </dependency>
+
         <!-- SLF4J API -->
         <dependency>
             <groupId>org.slf4j</groupId>
@@ -72,7 +86,7 @@
                 <version>3.1.2</version>
                 <configuration>
                     <suiteXmlFiles>
-                        <suiteXmlFile>testng.xml</suiteXmlFile>
+                        <suiteXmlFile>src/test/resources/testng.xml</suiteXmlFile> <!-- Poprawiona ścieżka do pliku testng.xml -->
                     </suiteXmlFiles>
                     <argLine>
                         -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
@@ -85,7 +99,7 @@
                     <dependency>
                         <groupId>org.aspectj</groupId>
                         <artifactId>aspectjweaver</artifactId>
-                        <version>${aspectj.version}</version>
+                        <version>${aspectj.version}</version> <!-- Używamy tej samej wersji co w properties -->
                     </dependency>
                 </dependencies>
             </plugin>
@@ -95,8 +109,6 @@
                 <version>2.12.0</version>
                 <configuration>
                     <reportVersion>${allure.version}</reportVersion>
-                    <resultsDirectory>${project.build.directory}/allure-results</resultsDirectory>
-                    <reportDirectory>${project.build.directory}/allure-report</reportDirectory>
                 </configuration>
             </plugin>
         </plugins>

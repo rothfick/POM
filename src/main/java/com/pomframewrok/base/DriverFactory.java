@@ -14,7 +14,11 @@ public class DriverFactory {
     private static final Logger logger = LoggerFactory.getLogger(DriverFactory.class);
 
     public static WebDriver getDriver(String browserType) {
-        WebDriver driver = null;
+        WebDriver driver;
+
+        if(browserType == null || browserType.isEmpty()){
+            browserType = "chrome";
+        }
         
         switch(browserType.toLowerCase()) {
             case "chrome":
@@ -36,6 +40,10 @@ public class DriverFactory {
                 configureCommonOptions(edgeOptions);
                 driver = new EdgeDriver(edgeOptions);
                 break;
+                default: System.out.println("Unknown browser type: " + browserType);
+                WebDriverManager.chromedriver().setup();
+                driver = new ChromeDriver();
+
         }
         return driver;
     }
