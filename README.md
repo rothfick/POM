@@ -1,3 +1,20 @@
+<!-- README_PRESENTATION_START -->
+<p align="center">
+  <img src="https://capsule-render.vercel.app/api?type=rect&height=140&color=0:0F172A,100:14B8A6&text=Selenium%20POM%20Framework&fontColor=FFFFFF&fontSize=30&fontAlignY=42&desc=Clean%20Page%20Object%20Model%20framework%20with%20TestNG%20and%20Allure&descAlignY=68&descSize=15" alt="Selenium POM Framework banner" />
+</p>
+
+<p align="center">
+  <img alt="Java: 11" src="https://img.shields.io/badge/Java-11-007396?style=for-the-badge" /> <img alt="Selenium: POM" src="https://img.shields.io/badge/Selenium-POM-43B02A?style=for-the-badge" /> <img alt="TestNG: Runner" src="https://img.shields.io/badge/TestNG-Runner-0B5CAD?style=for-the-badge" /> <img alt="Allure: Reports" src="https://img.shields.io/badge/Allure-Reports-FF6A00?style=for-the-badge" /> <img alt="Pattern: Page Objects" src="https://img.shields.io/badge/Pattern-Page%20Objects-14B8A6?style=for-the-badge" />
+</p>
+
+<table>
+  <tr><td><strong>Role signal</strong></td><td>Classic Selenium framework and maintainable UI tests</td></tr>
+<tr><td><strong>What to inspect</strong></td><td><code>BasePage</code>, <code>BaseTest</code>, <code>DriverFactory</code>, page classes</td></tr>
+<tr><td><strong>Best for</strong></td><td>QA Automation roles requiring Selenium and POM</td></tr>
+</table>
+
+<!-- README_PRESENTATION_END -->
+
 # Selenium POM Framework
 
 Focused Java Selenium framework demonstrating Page Object Model design, TestNG execution, WebDriverManager setup, and Allure reporting.
